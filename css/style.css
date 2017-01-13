@@ -4,9 +4,9 @@ selector {
 }
 */
 img {
-  height:120px;
-  width:120px;
-  border-radius:15px;
+  height:120em;
+  width:120em;
+  border-radius:15em;
   width: 100%;
   display: block;
   margin: 0px auto;
