@@ -1,7 +1,7 @@
-/*format for css:
+/*format for css: */
 
 header h1 {
-  color #00802b;
+  color: #00802b;
 }
 
 header {
@@ -17,9 +17,9 @@ ul {
   margin: 0;
   padding: p;
   overflow: hidden;
-  backgrounf-color: #333;
+  background-color: #333;
 }
 
 li {
-  test-align: center;
+  text-align: center;
 }
