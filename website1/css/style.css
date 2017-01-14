@@ -4,6 +4,10 @@ header h1 {
   color: #00802b;
 }
 
+header h1:hover {
+  color: red;
+  }
+
 header {
   background: url('https://static.pexels.com/photos/225025/pexels-photo-225025.jpeg');
   width: 100%;
