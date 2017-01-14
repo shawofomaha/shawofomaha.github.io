@@ -5,7 +5,11 @@ header h1 {
 }
 
 header h1:hover {
-  color: red;
+  color: orange;
+  }
+
+p:hover {
+  color: blue;
   }
 
 header {
