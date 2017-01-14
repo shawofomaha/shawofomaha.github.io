@@ -67,3 +67,8 @@ nav li a:hover {
 p, img {
   display: none;
 }
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+}
