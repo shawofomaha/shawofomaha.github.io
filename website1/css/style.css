@@ -12,7 +12,7 @@ header {
   background-size: cover;
 }
 
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: p;
@@ -20,15 +20,19 @@ ul {
   background-color: #333;
 }
 
-li {
+nav li {
   text-align: center;
   float: left;
 }
 
-li a {
+nav li a {
  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
+
+nav li a:hover {
+  color: red;
+  }
