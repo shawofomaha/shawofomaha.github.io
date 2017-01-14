@@ -8,6 +8,10 @@ header h1:hover {
   color: orange;
   }
 
+footer:hover {
+  color: yellow;
+  }
+
 p:hover {
   color: blue;
   }
