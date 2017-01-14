@@ -11,3 +11,15 @@ header {
   text-align: center;
   background-size: cover;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: p;
+  overflow: hidden;
+  backgrounf-color: #333;
+}
+
+li {
+  test-align: center;
+}
