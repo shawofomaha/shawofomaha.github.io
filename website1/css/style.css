@@ -20,6 +20,17 @@ article h1:hover {
   color: purple;
   }
 
+#green, #blue {
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+}
+
+#green {background: green}
+#blue {background: blue}
+
+
+
 header {
   background: url('https://static.pexels.com/photos/225025/pexels-photo-225025.jpeg');
   width: 100%;
