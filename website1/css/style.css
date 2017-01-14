@@ -9,11 +9,15 @@ header h1:hover {
   }
 
 footer:hover {
-  color: yellow;
+  color: green;
   }
 
 p:hover {
   color: blue;
+  }
+
+article h1:hover {
+  color: purple;
   }
 
 header {
