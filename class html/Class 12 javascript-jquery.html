@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .selected {
+            background-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button type="button" id="add">Add</button>
+    
+    <div>
+        <label>Input</label>
+        <input type="text" id="input" />
+        <br/>
+        <button type="button" id="go">Go</button>
+    </div>
+    
+    
+    
+    
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+</script>
+<script>
+    function changeBox(){
+        var input = $('#input').val();
+        if (parseFloat(input)) 
+        {
+            $('#box').css ({
+                width: input+"vmin",
+                height: input+"vmin"
+            });
+        } else 
+        {
+            //(input == "red" || input == "blue") {
+            $("#box").css( {
+                backgroundColor: input
+            });
+        }   
+    }
+    
+    $("body").on("click", ".box", function(){
+        
+    });
+    
+    $('#go').click(changeBox);
+        
+//          debugger;
+
+        
+    $('#input').keypress(function(event) {
+        if (event.charCode == 13)
+            {
+                changeBox();
+            }
+        debugger;
+        
+    });
+    
+    $("#box").click(function() {
+      
+      $(this).toggleClass("selected");
+    });
+                    
+    $("#add").click(function() {
+        $("#container").append("<div class='box'></div>");
+    });
+    
+</script>
+    
+
+
+    
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="#">
+
+<style>
+    .box {
+        position: relative;
+        width: 50vmin;
+        height: 50vmin;
+        border: 1px solid black;
+        background-color: white;
+    }
+</style>
+
+<script src="#"></script>
+

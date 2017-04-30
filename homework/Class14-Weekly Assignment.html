@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Assignment</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            border: 0;
+            
+        }
+        
+        #home:hover,
+        #numberRangeSet:hover,
+        #guessTry:hover,
+        #restartGameButton:hover,
+        #gameHintButton:hover {
+            background-color: rgba(255, 255, 255, 1.0);
+        }
+        
+        body {
+            position: absolute;
+            font: normal normal 400 large "Roboto", sans-serif;
+            height: 105vh;
+            background-image: url("http://www.lifeprint.com/asl101/signjpegs/n/number-chart-1-10.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #home {
+            color: blue !important;
+            font-size: large;
+            background-color: rgba(240, 248, 255, 0.8);
+            border-radius: 0.5vmin;
+            padding: 0.5vmin;
+            position: relative;
+            left: 5.0%;
+        }
+
+        
+        h1,
+        h3,
+        h6 {
+            font-family: sans-serif;
+            font-size: xxx-large;
+            width: 100vw;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        h3 {
+            font-size: xx-large;
+        }
+        
+        h6 {
+            font-size: x-large;
+            font-style: italic;
+        }
+        
+        div > .item {
+            font-size: large;
+            font-style: italic;
+            font-weight: 300;
+        }
+        
+        #logArea {
+            width: 95%;
+            font-size: x-large;
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        #logArea {
+            background-color: rgba(199, 194, 194, 0.8);
+            border-radius: 5vmin;
+            padding: 2vmin;
+        }
+        
+        label.item.reStart,
+        label.item.hint {
+            color: aliceblue;
+            font-size: large;
+        }
+        
+        label.item.hint {
+            padding: 2vmin;
+            position: relative;
+            /*            left: 21vw;*/
+        }
+        
+        #gameHintButton {
+            font-size: x-large;
+            border-radius: 5vmin;
+            margin: 1vmin;
+            padding: 2vmin;
+            position: relative;
+            /*            left: 20vw;*/
+        }
+        
+        #restartGameButton {
+            font-size: x-large;
+        }
+        
+        #topNumberRange,
+        #numberRangeSet,
+        #guessTry,
+        #guessedNumber,
+        #hintArea {
+            border-radius: 5vmin;
+            margin: 1vmin;
+            padding: 2vmin;
+            position: relative;
+        }
+        
+        #topNumberDisplay {
+            font-size: small;
+        }
+        
+        .guess,
+        .choose {
+            background-color: rgba(240, 248, 255, 0.8);
+            border-radius: 5vmin;
+            padding: 2vmin;
+            position: relative;
+            /*            left: 9vw;*/
+        }
+        
+        .forestgreen {
+            color: forestgreen;
+        }
+        
+        .lightgrey {
+            color: rgba(159, 157, 157, 0.8);
+        }
+        
+        #hintArea {
+            display: block;
+        }
+        
+        #logArea {
+            display: block;
+        }
+        /* *** centering the 8 elements ********* */
+        
+        label.item.choose.forestgreen,
+        label.item.choose.lightgrey {
+            margin-right: 2%;
+            left: 23%;
+        }
+        
+        #topNumberRange {
+            left: 23%;
+        }
+        
+        #numberRangeSet {
+            left: 23%;
+        }
+        
+        .guess {
+            left: 23%;
+        }
+        
+        #guessedNumber {
+            left: 25%;
+        }
+        
+        #guessTry {
+            left: 26.5%;
+        }
+        
+        label.item.reStart {
+            margin-left: 5%;
+        }
+        
+        #restartGameButton {
+            margin-left: 1%;
+        }
+        
+        .hint {
+            margin-left: -0.5%;
+        }
+        
+        #gameHintButton {
+            margin-left: 13%;
+        }
+        
+        div {}
+    </style>
+</head>
+
+<body>
+
+    <a class="button" id="home" href="../index.html">Home</a>
+            
+    <h1 class="item">Week 4 Homework JQuery</h1>
+
+    <h3 class="item">Number Game</h3>
+    <h6 class="item">Play against the Computer?</h6>
+    <br />
+    <br />
+    <div class="container">
+
+        <label class="item choose">Choose a number between 1 and ? :</label>
+        <input type="number" id="topNumberRange" class="item" value="100" />
+        <button type="button" id="numberRangeSet" class="item">Enter Top Number</button>
+        <br />
+        <label class="item guess">Guess a number between 1 and <span id="topNumberDisplay">100</span> :</label>
+        <input type="number" id="guessedNumber" class="item" />
+        <button type="button" id="guessTry" class="item" value="1">Guess</button>
+        <br />
+        <br />
+        <div id="logArea" class="item">Information log area</div>
+        <br />
+        <label class="item reStart">To restart, press the Restart Game button :</label>
+        <button type="button" id="restartGameButton" class="item">Restart Game</button>
+
+        <button type="button" id="gameHintButton" class="item">Hint</button>
+        <label class="item hint">: Game hint button</label>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+    </script>
+    <script>
+        //Functions
+        logAreaString = function (logAreaStrng) {
+            $("#logArea").text(logAreaStrng);
+//            return;
+        };
+
+        startState = function () {
+            $(".guess").removeClass("forestgreen").addClass("lightgrey");
+            $(".choose").removeClass("lightgrey").addClass("forestgreen");
+            $("#guessedNumber").prop('disabled', true);
+            $("#guessTry").prop('disabled', true);
+            $("#topNumberRange").prop('disabled', false);
+            $("#numberRangeSet").prop('disabled', false);
+            clearIntervalReset();
+            return;
+        };
+
+
+        toggleState = function () {
+            $("#guessedNumber").prop('disabled', false)
+            $("#guessTry").prop('disabled', false);
+            $("#topNumberRange").prop('disabled', true);
+            $("#numberRangeSet").prop('disabled', true);
+            $(".choose").removeClass("forestgreen").addClass("lightgrey");
+            $(".guess").removeClass("lightgrey").addClass("forestgreen");
+            return;
+        };
+        
+        resetlogArea = function () {
+            $("#logArea").css({
+                  "margin-left": "2.5vw"           
+                , "text-align": "center"
+                , "top-margin": "15vh"
+                , "color": "black"
+                , "width": "95vw"
+                , "background-color": "rgba(199, 194, 194,1.0)"
+                , "display": "flex"
+                , "justify-content": "center"
+                , "align-items": "center"
+            })            
+            return;
+        };
+
+        gameReset = function () {
+            wonGame = false;
+            startState();
+            topNumberRangeNbr = 100; // default is 100
+            $("#topNumberRange").val(100);
+            gameRandomNumber = parseInt(Math.random() * topNumberRangeNbr + 1);
+            playerGuess = $("#guess").val();
+            logAreaString(welcomeText);
+            nbrLoop = 0;
+            playerGuess = "";
+            $("#topNumberDisplay").text(topNumberRangeNbr);
+            resetlogArea();
+            clearIntervalReset();
+            return;
+        };
+
+        resetTopRangeNumber = function () {
+            toggleState();
+            topNumberRangeNbr = $("#topNumberRange").val();
+            if (topNumberRangeNbr < 2) {
+                topNumberRangeNbr = 100; // Reset to default if out of range!
+                $("#topNumberRange").val(100);
+            }
+
+            gameRandomNumber = parseInt(Math.random() * topNumberRangeNbr + 1);
+            logAreaString("Guess a number between 1 and " + topNumberRangeNbr + " and click the Guess button to see if you have WON or need to try some more!");
+            $("#topNumberDisplay").text(topNumberRangeNbr);
+            nbrLoop = 0;
+            return;
+        };
+
+        playtheGame = function () {
+
+            var closeString = "";
+            //          add parseInt() function wrapper??
+            playerGuess = $("#guessedNumber").val();
+            nbrLoop++;
+
+            if (playerGuess * 1 > topNumberRangeNbr * 1) {
+                logAreaString("Please pick a number between 1 and " + topNumberRangeNbr + "! You chose poorly and chose " + playerGuess + " which is higher then " + topNumberRangeNbr + " which you originally chose.");
+            } else if (playerGuess < 1) {
+                logAreaString("Please pick a number between 1 and " + topNumberRangeNbr + "! You chose poorly and chose " + playerGuess + " which is lower than 1 which is too Low or as Low as You can gO!");
+            } else {
+
+                var diffBetweenGuessandAnswer = Math.abs(playerGuess - gameRandomNumber);
+
+                if (diffBetweenGuessandAnswer === 0) {
+                    closeString = " You are da MAN or da woMAN and got it right!";
+                } else if (diffBetweenGuessandAnswer < 5) {
+                    closeString = " You are very close(hot)!";
+                } else if (diffBetweenGuessandAnswer < 15) {
+                    closeString = " You are quite close(warm)!";
+                } else if (diffBetweenGuessandAnswer < 25) {
+                    closeString = " You are very, very far(cool for the Computer)!";
+                } else {
+                    closeString = " You are SO very, very far away(you are ice-cold)!";
+                }
+
+                if (playerGuess == gameRandomNumber) {
+                    if (nbrLoop == 1) {
+                        logAreaString("You have won, your guess of " + playerGuess + " was correct! You made " + nbrLoop + " guess.");
+                        wonGame = true;
+                    } else {
+                        logAreaString("You have won, your guess of " + playerGuess + " was correct! You made " + nbrLoop + " guesses.");
+                        wonGame = true;
+                    }
+                } else {
+                    logAreaString("You have not won yet, as your guess of " + playerGuess + " was incorrect on guess number " + nbrLoop + ". Please enter another number to play again!" + closeString);
+                }
+
+                // re-initalize variables
+                playerGuess = "";
+
+            }
+            if (wonGame) {
+                wonGameAnimation();
+                holdText = $("#logArea").text(); // Save off the logArea text
+                gameReset();
+                logAreaString(holdText); // Restore the saved off text
+                holdText = ""; // reset hold text area
+                return;
+            }
+        };
+
+        wonGameAnimation = function () {
+            logAreaHtml = $("#logArea").html();
+            logAreaString("You ARE a BIG, BIG, BIG winner!");
+            debugger;
+            winGameAnimation();
+//            debugger;
+//            loopCounter = 0;
+//            intervalTimer = setInterval(winGameAnimation, 200);
+            ++loopCounter;
+            if (loopCounter > 7) {
+               clearIntervalReset(); 
+            } else {
+                intervalTimer = setInterval(winGameAnimation, 4500);    
+            }
+            return;
+            };
+
+        winGameAnimation = function () {
+            $("#logArea").css({                   
+                "position": "absolute"
+                , "left": "50%"
+                , "top": "50%"
+                , "transform": "translate(-50%, -50%)"
+                , "text-align": "center"
+                , "text-height": "33vmin"
+                , "color": "red"
+                , "width": "25vw"   
+                , "background-color": "rgba(0, 75, 2,1.0)"
+                , "display": "flex"
+                , "justify-content": "center"
+                , "align-items": "center"
+                , "border-radius": "50%"
+                , "z-index": "+10"            
+            }); 
+
+            var div = $("#logArea");
+            
+            div.animate({height: '65vh',  opacity: '0.4'}, "veryslow");
+            div.animate({width:  '95vw',  opacity: '0.8'}, "slow");
+            div.animate({height: '40vh',  opacity: '0.4'}, "slow");
+            div.animate({width:  '65vw',  opacity: '0.9'}, "9000");
+            div.animate({height: '20.5vh',opacity: '0.49'}, "slow");
+            div.animate({width:  '77vw',  opacity: '0.90'}, "slow", function () {
+
+
+           
+            }); 
+         
+            
+//            return;
+        };
+        
+        clearIntervalReset = function () {
+            clearInterval(intervalTimer);
+            $("#logArea").html(logAreaHtml);
+            $("#logArea").css({
+                  "display": "block"
+                , "border-radius": "5vmin"
+                , "background-color": "rgba(199, 194, 194, 0.8)"
+                , "padding": "2vmin"                
+                , "width": "95%"
+                , "font-size": "x-large"        
+                , "font-style": "normal"
+                , "font-weight": "400"        
+                , "font-style": "normal"
+            })  
+            return;
+        };
+
+
+        gameHintcss = function () {
+            debugger;
+            $("#logArea.li").css({
+                "color": "rgba(255,0,0,1.0)"
+            })
+            $("#logArea").css({
+                  "display": "block"
+                , "margin-left": "27.5vw"        
+                , "top-margin": "15vh"
+                , "width": "45vw"
+                , "background-color": "rgba(0,75,2,1.0)"
+                , "display": "flex"
+                , "justify-content": "center"
+                , "align-items": "center"
+            })
+            return;
+        };
+
+
+        // Set up game variables on entrance, this code is only run on page load:
+        var wonGame = false;
+        var holdText = "";
+        var nbrLoop = 0;
+        var playerGuess = "";
+        startState(); // set the active and inactive toggle to start state
+
+        var welcomeText = "Welcome to the game! If you want to change the top number,  please do so BEFORE pressing the ‘Enter Top Number’ button.  Next, enter your Guess of a number between 1 and the Top Number.   Finally, click the ‘Guess’ button to see if you have WON.  (or, not so much!)   At any time, you may restart the game by using the ‘Restart Game’ button on the bottom left. Also, if you get stuck there is a HINT button to help!";
+
+        var logAreaHtml = ""; 
+        var hintHtml = '<ul style="list-style:none;"><li style="color: rgba(244, 66, 66,1.0);">Very close (hot) —————— within +- 5 (:</li><li style="color: rgba(255,251,30,1.0);">Close (warm) ——————— within +- 15</li><li style="color: rgba(88, 214, 255,1.0);">Far away (cool) —————— within +- 25</li><li style="color: rgba(255, 255, 255,1.0);">Very far away (ice-cold) — more than +-25 ): </li></ul>';
+
+        var topNumberRangeNbr = $("#topNumberRange").val();
+        var gameRandomNumber = parseInt(Math.random() * topNumberRangeNbr + 1);
+        var playerGuess = $("#guess").val();
+        logAreaString(welcomeText);
+        var intervalTimer = "";
+        var loopCounter = 0;        
+        
+
+        // ***********  Click Handlers *********** //
+        $("#gameHintButton").click(function () {
+            clearIntervalReset();
+            if (logAreaHtml == "") {
+                logAreaHtml = $("#logArea").html();
+                $("#logArea").html(hintHtml);               
+                gameHintcss();
+            } else {
+                $("#logArea").html(logAreaHtml);
+                logAreaHtml = "";
+                resetlogArea();
+            }
+        });
+
+        // Restart game if #restartGameButton pressed
+        $("#restartGameButton").click(function () {
+            clearIntervalReset();
+            resetTopRangeNumber();
+            gameReset();
+        });
+
+        // Reset the Top Range Number game if #numberRangeSet pressed
+        $("#numberRangeSet").click(function () {
+            clearIntervalReset();
+            resetTopRangeNumber();
+        });
+
+        // Play the game if the #guessTry button is pressed
+        $("#guessTry").click(function () {
+            clearIntervalReset();
+            playtheGame();
+        });
+
+        // Treat the enter key same as onClick
+        $('#guessTry').keypress(function (e) {
+            var key = e.which;
+            if (key == 13) {
+                clearInterval(intervalTimer);
+                playtheGame();
+            }
+        });
+    </script>
+</body>
+</html>

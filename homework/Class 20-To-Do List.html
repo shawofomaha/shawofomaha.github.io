@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: dimgray;
+            font-family: sans-serif;
+        }
+        
+        #container {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        
+        .columns {
+            flex: 1 40%;
+            min-height: 23vh;
+            border: 1px solid black;
+        }
+        
+        #toDoList,
+        #groceryList,
+        #user1List,
+        #user2List {
+            border: 3px solid black;
+            background-color: rgba(211, 211, 211, 1.0);
+            min-width: 40vmin;
+            border-radius: 15px;
+            margin: 1vmin;
+        }
+        
+        .listName {
+            display: block;
+            text-align: center;
+            /*            border: 1px solid blue;*/
+            font-size: 5vmin;
+            font-weight: 600;
+            position: relative;
+            margin: 4vmin;
+        }
+        
+        .task {
+            display: inline;
+            width: 40vmin;
+            margin: 0.5vmin .5vmin 1.5vmin 0;
+            font-size: 2.5vmin;
+            font-weight: 400;
+            position: relative;
+            margin-left: 3.5vmin;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+            color: dimgrey;
+        }
+        
+        .notCompleted {
+            text-decoration: none;
+        }
+        
+        .showCompletedButton {
+            display: inline;
+        }
+        
+        .hideCompletedButton {
+            display: none;
+        }
+        
+        .hideRemoveButton {
+            display: none;
+        }
+        
+        .showRemoveButton {
+            display: inline;
+        }
+        
+        #addTask:hover {
+            height: 7vmin;
+            width: 12vmin;
+            border-radius: 17px;
+            background-color: red;
+            transition: all 1.5s cubic-bezier(.1, .73, .94, 1.0);
+        }
+        
+        #addTask,
+        button  {
+            height: 5vmin;
+            width: 9vmin;
+            border-radius: 15px;
+            background-color: aqua;
+        }
+        
+        #list,#date1 {
+            font-size: 1.25em;
+            color: antiquewhite;
+        }
+        
+        #date1, #priority {
+            font-size: 1em;
+            color: antiquewhite;
+        }        
+        
+    </style>
+</head>
+
+<body>
+
+    <audio id="sound1">
+        <source src="../media/sound_ex_machina_Buttons%20-%20Metallic%20Rotating%20Button.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button type="button" id="addTask">Add Task</button>
+    <input id="inpuText" type="text" value="default" />
+
+
+    <span id="date1">Due Date</span>
+    <input id="date2" type="date">
+    <input id="priority" type="checkbox"><span style="color:red;"> High Priority </span>
+
+    <br />
+    <span id="list">List: </span>
+    <select id="listName" name="">
+        <option></option>
+        <option value="user1List">User 1 List</option>
+        <option value="user2List">User 2 List</option>
+        <option value="toDoList">To Do List</option>
+        <option selected="selected" value="groceryList">Grocery List</option>
+    </select>
+
+    <div id="container">
+
+        <div class="columns" id="toDoList">
+            <span class="listName" value="To Do List">To Do List</span>
+            <br />
+        </div>
+        <div class="columns" id="groceryList">
+            <span class="listName" value="Grocery List">Grocery List</span>
+            <br />
+        </div>
+        <div class="columns" id="user1List">
+            <span class="listName" value="user1">user1</span>
+            <br />
+        </div>
+        <div class="columns" id="user2List">
+            <span class="listName" value="user2">user2</span>
+            <br />
+        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+    </script>
+    <script>
+        var txt = "";
+        var task = "";
+
+        $(document).ready(function () {
+            debugger;
+
+            function insertTask() {
+                var dateExist = $("#date2").val();
+                if (dateExist !== undefined) {
+                    txt = txt + " Due by: " + $("#date2").val();
+                }
+
+                debugger;
+                var normalTaskHtml = "<div id='dudeIt' class='task'><span class='desc'>" + txt + "</span><button type='button' class='completedButton'>Completed</button></div></span><button type='button' class='removeButton hideRemoveButton'>Remove</button></div><br />";
+
+                var priorityTaskHtml = "<div id='dudeIt' class='task'><span class='desc' style='color: red; font-size:1.25em;'>" + txt + "</span><button type='button' class='completedButton'>Completed</button></div></span><button type='button' class='removeButton hideRemoveButton'>Remove</button></div><br />";
+
+                var checked = $("#priority").is(':checked');
+                debugger;
+                if (checked == 0) {
+
+                    $("#" + task).append(normalTaskHtml);
+                } else {
+                    $("#priority").val(false);
+                    $("#" + task).append(priorityTaskHtml);
+                }
+            }
+
+            function editInput() {
+                txt = $("#inpuText").val();
+                $("#inpuText").val("default");
+                task = $("#listName").val();;
+                $("#inpuText").val();
+                if (txt == "default") {
+                    alert("1 -editInput - Please enter something other than 'default' or don't leave an empty task description!");
+                } else if (txt == " ") {
+                    alert("2 -editInput- Please don't leave an empty task description!");
+                } else if (txt == "") {
+                    alert("3 -editInput- Please don't leave an blank task description!");
+                } else {
+                    insertTask();
+                }
+            }
+
+            $("#addTask").click(function () {
+                $('#sound1').get(0).play();
+                editInput();
+            });
+
+            $(".columns").on("click", "button", function () {
+                $('#sound1').get(0).play();
+                if ($(this).hasClass("completedButton")) {
+
+                    $(this).prev().addClass("completed"); //Add text line-out
+                    $(this).parent().next().addClass("showRemoveButton"); //Show the remove button
+                    $(this).removeClass("showCompletedButton").addClass("hideCompletedButton"); // Remove completed button
+                }
+                if ($(this).hasClass("removeButton")) {
+                    $(this).prev("").remove(); // remove the Text
+                    $(this).remove(); // remove the button
+                } else {
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>
