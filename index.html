@@ -71,7 +71,15 @@
         width: auto;
         /*        border: 1px dotted blue;*/
         box-sizing: border-box;
-        overflow: hidden;
+/*        overflow: hidden;*/
+          display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
     }
     
     .pageRight {
@@ -256,6 +264,8 @@
     }    
     
     body {
+        overflow-x: scroll;
+        overflow-y: scroll;
         background-image: url("https://lorempixel.com/g/1920/1920/nature/2");
         background-size: cover;
         background-repeat: no-repeat;
@@ -307,9 +317,10 @@
 
 <body id="main">
 
+    <h1><span class="hollyorgane">Mark Shaw</span>'s Web Demo Page</h1>
     <div class="page">
 
-        <h1><span class="hollyorgane">Mark Shaw</span>'s Web Demo Page</h1>
+        
 
         <div class="containerLeft">
             <h3 id="h3_first" class="h3Color">Interface Web School - Class Work</h3>
