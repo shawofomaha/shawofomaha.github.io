@@ -14,26 +14,15 @@
 
     <link href="http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Bad+Script|Delius+Swash+Caps|Kavivanar|Patrick+Hand+SC|Shadows+Into+Light+Two|Swanky+and+Moo+Moo" rel="stylesheet">
 </head>
 
 <style>
-    .titleDarkBlue {
-        color: rgba(49, 66, 127, 1.0);
-    }
-    
-    .titleMiddleBlue {
-        color: rgba(98, 132, 255, 1.0);
-    }
-    
-    .titleLightBlue {
-        color: rgba(175, 192, 255, 1.0);
-    }
-
     html,
     body {
         background-color: rgba(2, 2, 2, 1.0);
         color: rgba(175, 192, 255, 0.85);
-        height: 120%;
+        /*        height: 105%;*/
     }
     
     .container,
@@ -43,6 +32,10 @@
         position: relative;
         height: auto;
         /*        border: 2px solid yellow;*/
+    }
+    
+    .container {
+        top: -7vmin;
     }
     
     .containerRight {
@@ -70,12 +63,6 @@
         clear: both;
     }
     
-    .containerBottom img {
-        /*        top: 75vmin;    */
-    }
-    
-    .containerRight li {}
-    
     .containerLeft li {
         left: 15vmin;
     }
@@ -85,11 +72,6 @@
         /*        border: 1px dotted blue;*/
         box-sizing: border-box;
         overflow: hidden;
-        /*
-        flex-direction: row;
-        flex-wrap: wrap;
-        flex-grow: 1;        
-*/
     }
     
     .pageRight {
@@ -104,18 +86,24 @@
     }
     
     .containerBottom img {
+        position: relative;
         border: 1px solid rgba(222, 222, 222, 0.9);
-        /*        float: left;*/
-        /*        width: auto;*/
+        top: 24vmin;
+        left: 5vmin;
     }
     
     h1 {
-        /*        width: 10vw;*/
-        border: 1px solid rgba(175, 192, 255, 1.0);
+        border: 2.5px solid rgba(175, 192, 255, 1.0);
+        width: 75%;
         border-radius: 2vw;
+        -o-border-image: linear-gradient(to bottom, rgba(175, 192, 255, 1.0) 0%, rgba(9, 66, 127, 1.0) 100%);
+        border-image: -webkit-linear-gradient(top, rgba(175, 192, 255, 1.0) 0%, rgba(9, 66, 127, 1.0) 100%);
+        border-image: linear-gradient(to bottom, rgba(175, 192, 255, 1.0) 0%, rgba(9, 66, 127, 1.0) 100%);
+        border-image-slice: 1;
         background-color: rgbaoth(175, 192, 255, 0.5);
         text-align: center;
         position: relative;
+        left: 20vmin;
         /* The element to apply the animation to */
         -webkit-animation-delay: 5s;
         animation-delay: 5s;
@@ -127,64 +115,67 @@
         animation-iteration-count: infinite;
         -webkit-animation-direction: alternate;
         animation-direction: alternate;
-        font-family: 'Pacifico', cursive;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Kavivanar', cursive;
         font-size: 7vmin;
-        text-shadow: 0 0 3px #FF0000;
-        /*        margin-left: 22vw;*/
     }
     
     #typedtext {
-        font-family: 'Waiting for the Sunrise', cursive;
-        font-family: 'Roboto', sans-serif;
+        display: inline-block;
+        margin-left: 20vmin;
+        border-radius: 2vw;
+        background-color: rgba(244, 244, 244, 0.3);
+        border: 1px solid dodgerblue;
+        text-shadow: 2.5px 1.25px rgba(69, 69, 69, 1.0);
+/*        top: -11vmin !important;*/
+        padding-bottom: 5vmin;
+        padding-top: 1.5vmin;
+        font-family: 'Kavivanar', cursive;
         letter-spacing: normal;
         font-weight: bold;
-        font-size: 5vmin;
+        font-size: 0.85em;
         color: whitesmoke;
     }
     
     h3 {
-        /*        position: relative;*/
-        /*        left: 15vmin;*/
-        /*        display: block;*/
         /*        border: 2px solid purple;*/
         margin: 0;
-        padding: 0;
+        padding-bottom: 2.5vmin;
         height: 2.75vh;
-        color: rgba(191, 244, 66, 1.0);
         font-size: 2.75vmin;
     }
     
     #h3_first {
         /*        border: 1px dotted pink;*/
         text-align: center;
-        text-shadow: 2.25px 2.25px rgba(2, 2, 2, 1.0);
     }
     
     #h3_third {
-        /*        border: 1px dotted pink;*/
+        /*                border: 1px dotted pink;*/
+        width: 50%;
+        left: 12.5vmin;
         position: relative;
-        /*        text-align: center;*/
-        left: -18.5vmin;
-        -webkit-transform: translate(36%, 0%);
-        /*        transform: translate(36%, 0%);        */
     }
     
     #h3_third,
     #h3_first,
     h1 {
         text-shadow: 2.5px 1.25px rgba(2, 2, 2, 1.0);
-        font-family: sans-serif;
     }
     
     ul {
-        /*        display: inline-block;*/
-        padding: 0 0 0 0;
+        padding: 0;
         margin: 0;
         text-align: center;
-        list-style: none;
-        font-family: sans-serif;
-        font-family: 'Roboto', sans-serif;
+        list-style: none; 
+/*
+        font-family: 'Architects Daughter', cursive;
+        font-family: 'Shadows Into Light Two', cursive;
+        font-family: 'Delius Swash Caps', cursive;
+        font-family: 'Swanky and Moo Moo', cursive;
+        font-family: 'Kavivanar', cursive;
+        font-family: 'Bad Script', cursive;        
+*/
+        font-family: 'Patrick Hand SC', cursive;
         color: rgba(255, 255, 255, 1.0);
         border-radius: 2vw;
         width: 29vw;
@@ -192,17 +183,11 @@
         border: 2px solid dodgerblue;
         opacity: 0.6;
         filter: alpha(opacity=60);
-        /*
-        -webkit-transform: translate(100%, 0%);
-        transform: translate(100%, 0%);
-*/
     }
     
     li {
-        /*        width: 27vw;*/
         text-align: center;
-        font-size: 1em;
-        font-size: 2vmin;
+        font-size: 0.60em;
     }
     
     body {
@@ -230,32 +215,27 @@
     }
     
     body {
-        /*        background-color: rgba(221, 234, 255, 1.0);*/
-        background-image: url("http://lorempixel.com/g/1920/1920/nature");
+        background-image: url("http://lorempixel.com/g/1920/1920/nature/2");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;
-        /*        border-radius: 15%;*/
     }
     
     .blue {
         color: dodgerblue;
-        /*        font-style: italic;*/
     }
     
     .red {
         color: red;
-        /*        font-style: italic;*/
+        color: rgba(244, 232, 203, 1.0);
     }
     
     .green {
         color: rgb(95, 175, 49);
-        /*        font-style: italic;*/
     }
     
     .purple {
         color: rgb(170, 43, 198);
-        /*        font-style: italic;*/
     }
     
     .hollyTan {
@@ -269,116 +249,58 @@
     .hollyGreen {
         color: rgba(214, 244, 212, 1.0);
     }
+    
+    .titleDarkBlue {
+        color: rgba(49, 66, 127, 1.0);
+    }
+    
+    .titleMiddleBlue,
+    .h3Color {
+        color: rgba(98, 132, 255, 1.0);
+    }
+    
+    .titleLightBlue {
+        color: rgba(175, 192, 255, 1.0);
+    }
 </style>
 
 <body id="main">
 
     <div class="page">
 
-        <h1>Mark Shaw's Web Demo <span class="hollyBlue">P</span><span class="hollyBlue">a</span><span class="hollyBlue">g</span><span class="blue2">e</span><span class="purple"></span> </h1>
-
-        <!--
-        <div class="container">
-            <h3 id="h3_first">Work done in Class</h3>
-            <ul>
-                <li><a href="class html/week 2-working.html">Class INPUTs in html</a></li>
-                <li><a href="class html/week 2-working-day2.html">More Inputs Video Audio</a></li>
-                <li><a href="class html/flex-box-play.html">Playing with Flex boxes Part I</a></li>
-                <li><a href="class html/flex-box-play-2.html">Playing with Flex boxes Part II</a></li>
-                <li><a href="class html/floatlayout.html">Playing with Float Layouts</a></li>
-                <li><a href="class html/week 3-working.html">Week 3-Class working</a></li>
-                <li><a href="class html/Class 11 - Javascript.html">Javascript</a></li>
-                <li><a href="class html/Class10-bootstrap.html">bootstrap</a></li>
-                <li><a href="class html/Class10-bootstrap-2.html">bootstrap-2</a></li>
-                <li><a href="class html/class10-advancedSelectors.html">advancedSelectors</a></li>
-
-                <li><a href="class html/Jquery Plugins.html">Jquery Plugins - Random Color Match Game</a></li>
-                <li><a href="class%20html/Class%20CAR%20RACE%20Game.html">Car Race</a></li>
-                <li><a href="class html/3d Card Flip.html">3D Card Flip</a>
-                </li>
-                <li><a href="class%20html/Class-input-local-storage.html">Input Local Storage</a></li>
-                <li><a href="class%20html/Class%2018%20-%203d.html">3d html</a></li>
-                <li><a href="class%20html/class%2018%20-%20bounce.html">Bounce</a></li>
-                <li><a href="class%20html/audio player.html">Audio Player</a></li>                
-                
-                <li><a href="class%20html/Class18-Parallax.html">Parallax</a></li>
-                <li><a href="class%20html/Class18-transitions.html">Transitions</a></li>
-
-                <li><a href="class%20html/Class%2013%20javascript-Nick%20example3.html">Javascript Nick</a></li>
-                <li><a href="class%20html/cube-ken.html">Cube</a></li>
-                <a href="class%20html/cube-pics.html">Cube Picture Spin</a>
-
-            </ul>
-
-        </div>
--->
-        <!--
-        <br />
-        <div class="container">
--->
-        <!--
-            <h3 id="h3_second">Weekend Home Work</h3>
-            <ul>
-                <li><a href="homework/Class_3_Homework_Website_Evaluation.html">Week 1 - 3 Web sites Evaluation on the use of Color </a></li>
-                <li><a href="homework/css-properties.html">Week 2 -Class CSS Properties</a></li>
-                <li><a href="homework/color.html">Week 3 - Class Color Properties</a></li>
-                
-                <li><a href="homework/Class 6 Weekend Homework - Sixteen Mobile Deisgn.html">Week 4 - Sixteen Mobile Design</a></li>
--->
-        <!--                <li><a href="homework/Class%209%20Weekend%20Homework%20-%20Sixteen%20Hand%20to%20Desktop%20Design%20-%20Extended.html">Week 3 - Sixteen Mobile to Desktop Extended Design</a></li>-->
-        <!--
-                <li><a href="homework/Class 9 Weekend Homework - Sixteen Hand to Desktop Design.html">Week 5 - Sixteen Mobile to Desktop Design</a></li>
-                
-                <a href="homework/Class14-Weekly Assignment.html">Week 6 - Number Game</a>
-                <br />
-                <li><a href="homework/Class 20-To-Do List.html">Week 7 To Do List</a></li>
-
-            </ul>
-
-        </div>
--->
+        <h1><span class="hollyorgane">Mark Shaw</span>'s Web Demo Page</h1>
 
         <div class="containerLeft">
-            <h3 id="h3_first" class="hollyGreen">Interface Web School - Class Work</h3>
+            <h3 id="h3_first" class="h3Color">Interface Web School - Class Work</h3>
             <ul>
-                <li><a href="class html/week 2-working.html">Class INPUTs in html</a></li>
-                <li><a href="class html/week 2-working-day2.html">More Inputs Video Audio</a></li>
-                <li><a href="class html/flex-box-play.html">Playing with Flex boxes Part I</a></li>
-                <li><a href="class html/flex-box-play-2.html">Playing with Flex boxes Part II</a></li>
-                <li><a href="class html/floatlayout.html">Playing with Float Layouts</a></li>
-                <li><a href="class html/week 3-working.html">Week 3-Class working</a></li>
-                <li><a href="class html/Class 11 - Javascript.html">Javascript</a></li>
-                <li><a href="class html/Class10-bootstrap.html">bootstrap</a></li>
-                <li><a href="class html/Class10-bootstrap-2.html">bootstrap-2</a></li>
-                <li><a href="class html/class10-advancedSelectors.html">advancedSelectors</a></li>
 
                 <li><a href="class html/Jquery Plugins.html">Jquery Plugins - Random Color Match Game</a></li>
-                <li><a href="class%20html/Class%20CAR%20RACE%20Game.html">Car Race</a></li>
                 <li><a href="class html/3d Card Flip.html">3D Card Flip</a>
                 </li>
-                <li><a href="class%20html/Class-input-local-storage.html">Input Local Storage</a></li>
-                <li><a href="class%20html/Class%2018%20-%203d.html">3d html</a></li>
                 <li><a href="class%20html/class%2018%20-%20bounce.html">Bounce</a></li>
                 <li><a href="class%20html/audio player.html">Audio Player</a></li>
-
-                <li><a href="class%20html/Class18-Parallax.html">Parallax</a></li>
                 <li><a href="class%20html/Class18-transitions.html">Transitions</a></li>
-
-                <li><a href="class%20html/Class%2013%20javascript-Nick%20example3.html">Javascript Nick</a></li>
                 <li><a href="class%20html/cube-ken.html">Cube</a></li>
-                <li>
-                    <a href="class%20html/cube-pics.html">Cube Picture Spin</a></li>
+                <li><a href="class%20html/cube-pics.html">Cube Picture Spin</a></li>
+                <li><a href="homework/Class_3_Homework_Website_Evaluation.html">Web sites Evaluation on the use of Color </a></li>
+
+                <li><a href="homework/color.html">Class Color Properties</a></li>
+                <li><a href="homework/Class 6 Weekend Homework - Sixteen Mobile Deisgn.html">Sixteen Mobile Design</a></li>
+                <li><a href="homework/Class 9 Weekend Homework - Sixteen Hand to Desktop Design.html">Sixteen Mobile to Desktop Design</a></li>
+                <li><a href="homework/Class14-Weekly Assignment.html">Number Game</a></li>
+                <li><a href="homework/Class 20-To-Do List.html">To Do List</a></li>
+
                 <li><a href="#">&nbsp;</a></li>
+
             </ul>
 
         </div>
 
         <div class="containerRight">
-            <h3 id="h3_third" class="hollyGreen">  Client Web Projects</h3>
+            <h3 id="h3_third" class="h3Color">  Client Web Projects</h3>
             <ul>
-                <li><a href="Projects/Refresh-Original%20Client%20Demo/index.html">Refresh Estate Sales - Original Site Demo, Iteration 1</a></li>
-                <li><a href="Projects/refresh/index.html">Refresh Estate Sales  - GitHub mirror</a></li>
-
+                <li><a href="Refresh-Original%20Client%20Demo/index.html">Refresh Estate Sales - Original Site Demo, Iteration 1</a></li>
+                <li><a href="refresh/index.html">Refresh Estate Sales  - GitHub mirror</a></li>
                 <li><a href="http://refreshestatesales.biz">Refresh Estate Sales - Current .biz site</a></li>
                 <li><a href="#">&nbsp;</a></li>
             </ul>
@@ -397,15 +319,17 @@
 </body>
 
 </html>
-   
+
 <script>
     // set up text to print, each item in array is new line
     var aText = new Array(
-        "<span class='titleLightBlue'>H</span><span class='titleMiddleBlue'>i</span><span class='titleDarkBlue'>!  </span> Welcome to my Web Demo Page",
-        "Please take a closer look at the work I've completed at The Interface Web",
-        "School and the work I've done for my web clients."
+        "<span class='titleLightBlue'>H</span><span class='titleMiddleBlue'>i</span> ! Welcome to my Web Demo Page.",
+        "Please take a closer look at the work completed at The",
+        "Interface Web School and the work done for my web",
+        "clients."
+
     );
-    var iSpeed = 133; // time delay of print out
+    var iSpeed = 69; // time delay of print out
     var iIndex = 0; // start printing array at this posision
     var iArrLength = aText[0].length; // the length of the text array
     var iScrollAt = 20; // start scrolling up at this many lines
@@ -422,7 +346,7 @@
         while (iRow < iIndex) {
             sContents += aText[iRow++] + '<br />';
         }
-        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "<span style='color:red'> _ &#199</span>";
+        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "<span style='color:hollyTan'>_</span>";
         if (iTextPos++ == iArrLength) {
             iTextPos = 0;
             iIndex++;
