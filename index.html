@@ -126,10 +126,10 @@
         /* The element to apply the animation to */
         -webkit-animation-delay: 0.1s;
         animation-delay: 0.1s;
-        -webkit-animation-name: colorCrossFade;
-        animation-name: colorCrossFade;
-        -webkit-animation-duration: 0.5s;
-        animation-duration: 0.5s;
+        -webkit-animation-name: colorCrossFade2;
+        animation-name: colorCrossFade2;
+        -webkit-animation-duration: 0.35s;
+        animation-duration: 0.35s;
         -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
         -webkit-animation-direction: alternate;
@@ -232,6 +232,24 @@
             color: rgba(175, 192, 255, 0.99);
         }
     }
+    
+    @-webkit-keyframes colorCrossFade2 {
+        from {
+            color: rgba(0, 50, 234, 0.99);
+        }
+        to {
+            color: rgba(2, 233, 2, 0.99);
+        }
+    }
+    
+    @keyframes colorCrossFade2 {
+        from {
+            color: rgba(0, 50, 234, 0.99);
+        }
+        to {
+            color: rgba(2, 233, 2, 0.59);
+        }
+    }    
     
     body {
         background-image: url("https://lorempixel.com/g/1920/1920/nature/2");
