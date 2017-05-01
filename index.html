@@ -4,11 +4,13 @@
 <head>
     <title>Mark Shaw's Web Demo Page</title>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<!--    <script src="../js/script.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <!--    <script src="../js/script.js"></script>-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <link rel="stylesheet" href="../css/stylesheet-index.css">-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link media="all and (min-width: 600px) " rel="stylesheet" href="/css/mobile.css">
+    <link media="all and (min-width: 601px)" rel="stylesheet" href="/css/desktop.css"> 
 
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" />
 
@@ -18,309 +20,15 @@
 </head>
 
 <style>
-    html,
-    body {
-        background-color: rgba(2, 2, 2, 1.0);
-        color: rgba(175, 192, 255, 0.85);
-        /*        height: 105%;*/
-    }
-    
-    .container,
-    .containerRight,
-    .containerLeft,
-    .containerBottom {
-        position: relative;
-        height: auto;
-        /*        border: 2px solid yellow;*/
-    }
-    
-    .container {
-        top: -7vmin;
-    }
-    
-    .containerRight {
-        /*        border: 1px solid red;*/
-        display: inline-block;
-        float: right;
-        left: 15vmin;
-        width: 50%;
-    }
-    
-    .containerLeft {
-        /*        border: 1px solid lavender;*/
-        display: inline-block;
-        float: left;
-        left: 20vmin;
-        width: auto;
-    }
-    
-    .containerBottom {
-        position: relative;
-        display: inline-block;
-        top: 1.0vmin;
-        left: 30%;
-        /*         border: 1px solid white;*/
-        clear: both;
-    }
-    
-    .containerLeft li {
-        left: 15vmin;
-    }
-    
-    .page {
-        width: auto;
-        /*        border: 1px dotted blue;*/
-        box-sizing: border-box;
-/*        overflow: hidden;*/
-          display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-    }
-    
-    .pageRight {
-        /*        border: 1px dotted red;*/
-    }
-    
-    img {
-        border-radius: 25vw;
-        width: 25vw;
-        filter: alpha(opacity=60);
-        overflow: visible;
-    }
-    
-    .containerBottom img {
-        position: relative;
-        border: 1px solid rgba(222, 222, 222, 0.9);
-        top: 24vmin;
-        left: 5vmin;
-    }
-    
-    h1 {
-        border: 2.5px solid rgba(175, 192, 255, 1.0);
-        width: 75%;
-        border-radius: 2vw;
-        -o-border-image: linear-gradient(to bottom, rgba(175, 192, 255, 1.0) 0%, rgba(9, 66, 127, 1.0) 100%);
-        border-image: -webkit-linear-gradient(top, rgba(175, 192, 255, 1.0) 0%, rgba(9, 66, 127, 1.0) 100%);
-        border-image: linear-gradient(to bottom, rgba(175, 192, 255, 1.0) 0%, rgba(9, 66, 127, 1.0) 100%);
-        border-image-slice: 1;
-        background-color: rgbaoth(175, 192, 255, 0.5);
-        text-align: center;
-        position: relative;
-        left: 33vmin;
-        /* The element to apply the animation to */
-        -webkit-animation-delay: 1.5s;
-        animation-delay: 1.5s;
-        -webkit-animation-name: colorCrossFade;
-        animation-name: colorCrossFade;
-        -webkit-animation-duration: 2.5s;
-        animation-duration: 2.5s;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-direction: alternate;
-        animation-direction: alternate;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-        font-family: 'Kavivanar', cursive;
-        font-size: 7vmin;
-    }
-    
-    a:hover   {
-        font-size: 1.1em;
-        /* The element to apply the animation to */
-        -webkit-animation-delay: 0.1s;
-        animation-delay: 0.1s;
-        -webkit-animation-name: colorCrossFade2;
-        animation-name: colorCrossFade2;
-        -webkit-animation-duration: 0.55s;
-        animation-duration: 0.55s;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-direction: alternate;
-        animation-direction: alternate;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;        
-    }
-    
-    #typedtext {
-        position: relative;
-        display: inline-block;
-        margin-left: 20vmin;
-        padding-left: 2.5vmin;
-        padding-right: 2.5vmin;
-        border-radius: 2vw;
-        background-color: rgba(244, 244, 244, 0.3);
-        border: 1px solid dodgerblue;
-        text-shadow: 2.5px 1.25px rgba(69, 69, 69, 1.0);
-/*        top: -11vmin !important;*/
-        padding-bottom: 5vmin;
-        padding-top: 1.5vmin;
-        font-family: 'Kavivanar', cursive;
-        letter-spacing: normal;
-        font-weight: bold;
-        font-size: 1.0em;
-        color: whitesmoke;
-    }
-    
-    h3 {
-        /*        border: 2px solid purple;*/
-        margin: 0;
-        padding-bottom: 2.5vmin;
-        height: 2.75vh;
-        font-size: 1.1em;
-    }
-    
-    #h3_first {
-        /*        border: 1px dotted pink;*/
-        text-align: center;
-    }
-    
-    #h3_third {
-        /*                border: 1px dotted pink;*/
-        width: 50%;
-        left: 25vmin;
-        position: relative;
-    }
-    
-    #h3_third,
-    #h3_first,
-    h1 {
-        text-shadow: 2.5px 1.25px rgba(2, 2, 2, 1.0);
-    }
-    
-    ul {
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        list-style: none;
-/*        width: 80%;*/
-/*
-        font-family: 'Architects Daughter', cursive;
-        font-family: 'Shadows Into Light Two', cursive;
-        font-family: 'Delius Swash Caps', cursive;
-        font-family: 'Swanky and Moo Moo', cursive;
-        font-family: 'Kavivanar', cursive;
-        font-family: 'Bad Script', cursive;        
-*/
-        font-family: 'Patrick Hand SC', cursive;
-        color: rgba(255, 255, 255, 1.0);
-        border-radius: 2vw;
-        width: 40vw;
-        background-color: #ffffff;
-        border: 2px solid dodgerblue;
-        opacity: 0.6;
-        filter: alpha(opacity=60);
-    }
-    
-    li {
-        text-align: center;
-        font-size: 1.0em;
-    }
-    
-    body {
-        padding: 0 0 0 0;
-        margin: 0 0 0 0;
-    }
-    /* The animation code */
-    
-    @-webkit-keyframes colorCrossFade {
-        from {
-            color: rgba(0, 50, 234, 0.99);
-        }
-        to {
-            color: rgba(175, 192, 255, 0.99);
-        }
-    }
-    
-    @keyframes colorCrossFade {
-        from {
-            color: rgba(0, 50, 234, 0.99);
-        }
-        to {
-            color: rgba(175, 192, 255, 0.99);
-        }
-    }
-    
-    @-webkit-keyframes colorCrossFade2 {
-        from {
-            color: rgba(0, 50, 234, 0.99);
-        }
-        to {
-            color: rgba(2, 233, 2, 0.99);
-        }
-    }
-    
-    @keyframes colorCrossFade2 {
-        from {
-            color: rgba(0, 50, 234, 0.99);
-        }
-        to {
-            color: rgba(2, 233, 2, 0.59);
-        }
-    }    
-    
-    body {
-        overflow-x: scroll;
-        overflow-y: scroll;
-        background-image: url("https://lorempixel.com/g/1920/1920/nature/2");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-    }
-    
-    .blue {
-        color: dodgerblue;
-    }
-    
-    .red {
-        color: red;
-        color: rgba(244, 232, 203, 1.0);
-    }
-    
-    .green {
-        color: rgb(95, 175, 49);
-    }
-    
-    .purple {
-        color: rgb(170, 43, 198);
-    }
-    
-    .hollyTan {
-        color: rgba(244, 232, 203, 1.0);
-    }
-    
-    .hollyBlue {
-        color: rgba(175, 192, 255, 1.0);
-    }
-    
-    .hollyGreen {
-        color: rgba(214, 244, 212, 1.0);
-    }
-    
-    .titleDarkBlue {
-        color: rgba(49, 66, 127, 1.0);
-    }
-    
-    .titleMiddleBlue,
-    .h3Color {
-        color: rgba(98, 132, 255, 1.0);
-    }
-    
-    .titleLightBlue {
-        color: rgba(175, 192, 255, 1.0);
-    }
+
 </style>
 
 <body id="main">
-
+    <br />
     <h1><span class="hollyorgane">Mark Shaw</span>'s Web Demo Page</h1>
     <div class="page">
 
-        
+
 
         <div class="containerLeft">
             <h3 id="h3_first" class="h3Color">Interface Web School - Class Work</h3>
@@ -362,12 +70,14 @@
             <img src="https://lorempixel.com/320/320/business" />
         </div>
 
-        <div class="container">
-            <div id="typedtext" class="blue"></div>
-        </div>
+
 
 
     </div>
+    
+            <div class="container">
+            <div id="typedtext" class="blue"></div>
+        </div>
 </body>
 
 </html>
