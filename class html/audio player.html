@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            body {
-                background-color: coral;
-            }
-            .audio{
-                width: 20vmin;
-                height: 20vmin;
-                border: 1px solid black;
-                box-sizing: border-box;
-                display: inline-block;
-                background-color: antiquewhite;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Audio Player Demo</h1>
-        <div id="audioFiles">
-            <div class="audio" src="../media/shawofomaha_end-of-an-era.mp3">End of an Era</div>
-            <div class="audio" src="../media/refresh_paul4.mp3">Refresh Estate Sales</div>
-        </div>
+
+<head>
+    <style>
+        body {
+            background-color: coral;
+        }
         
-        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-        <script>
-//            var src = $("#element").attr("src");
-//            var audio = new Audio(src);
-//            audio.play();
-            
-            $(".audio").click(function(){
-                var src = $(this).attr("src");
-                var audio = new Audio(src);
-                audio.play();
-            });
-        </script>
-    </body>
+        #audioFiles {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+        }
+        
+        .audio {
+            width: 40vmin;
+            height: 20vmin;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: inline-block;
+            background-color: antiquewhite;
+            line-height: 20vmin;
+            text-align: center;
+            color: rgba(2, 2, 1, 1.0);
+            font-size: 1.5em;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Audio Player Demo</h1>
+    <div id="audioFiles">
+        <button type="button">
+            <div class="audio" src="../media/shawofomaha_end-of-an-era.mp3">End of an Era</div>
+        </button>
+        <button type="button">
+            <div class="audio" src="../media/refresh_paul4.mp3">Refresh Estate Sales</div>
+        </button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        //            var src = $("#element").attr("src");
+        //            var audio = new Audio(src);
+        //            audio.play();
+
+        $(".audio").click(function () {
+            var src = $(this).attr("src");
+            var audio = new Audio(src);
+            audio.play();
+        });
+    </script>
+</body>
+
 </html>
