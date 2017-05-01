@@ -2,7 +2,17 @@
     body {
         background-color: rgba(2, 2, 2, 1.0);
         color: rgba(175, 192, 255, 0.85);
-        /*        height: 105%;*/
+        height: 105%;
+    }
+
+    
+    body {
+        overflow-x: scroll;
+        overflow-y: scroll;
+        background-image: url("https://lorempixel.com/g/1920/1920/nature/2");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
     }
     
     .container,
@@ -15,16 +25,18 @@
     }
     
     .container {
-        top: -37vmin;
-        left -5vmin;
+        top: 5vmin;
+        left 3vmin;
     }
     
     .containerRight {
         /*        border: 1px solid red;*/
         display: inline-block;
         float: right;
-        left: 5vmin;
+        left: 16vmin;
         width: 50%;
+        width: 44vmin;
+        height: 35vmin;
     }
     
     .containerLeft {
@@ -32,8 +44,17 @@
         display: inline-block;
         float: left;
         width: auto;
+        width: 44vmin;
+        height: 35vmin; 
+        clear: both;
     }
-    
+
+    .containerBottom img {
+        position: relative;
+        border: 1px solid rgba(222, 222, 222, 0.9);
+        top: +25vmin;
+        left:  -115vmin;
+    } 
     .containerBottom {
         position: relative;
         display: inline-block;
@@ -42,13 +63,7 @@
         /*         border: 1px solid white;*/
         clear: both;
     }
-    .containerBottom img {
-        position: relative;
-        border: 1px solid rgba(222, 222, 222, 0.9);
-/*        float: right;*/
-        top: -7vmin;
-        left: 45vmin;
-    }    
+   
     
     .containerLeft li {
 /*        left: 15vmin;*/
@@ -60,11 +75,9 @@
         box-sizing: border-box;
         /*        overflow: hidden;*/
         display: -webkit-box;
-        display: -moz-box;
         display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
-        -webkit-flex-flow: row wrap;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
     }
     
@@ -73,8 +86,8 @@
     }
     
     img {
-        border-radius: 25vw;
-        width: 25vw;
+        border-radius: 20vw;
+        width: 20vw;
         filter: alpha(opacity=60);
         overflow: visible;
     }
@@ -137,9 +150,12 @@
         background-color: rgba(244, 244, 244, 0.3);
         border: 1px solid dodgerblue;
         text-shadow: 2.5px 1.25px rgba(69, 69, 69, 1.0);
-        /*        top: -11vmin !important;*/
-        padding-bottom: 5vmin;
-        padding-top: 1.5vmin;
+        top: 1vmin;
+        left: 5.5vmin;
+        height: 6vmin;
+/*        width: 90vmin;*/
+        padding-bottom: 2.5vmin;
+        padding-top: 0.5vmin;
         font-family: 'Kavivanar', cursive;
         letter-spacing: normal;
         font-weight: bold;
@@ -156,15 +172,22 @@
     }
     
     #h3_first {
-        /*        border: 1px dotted pink;*/
+         position: relative;
+        display: inline-block;
+        width: 50vmin !important;
+                border: 1px dotted pink;
+        left: 11vmin;
         text-align: center;
     }
     
     #h3_third {
+        position: relative;
 /*                        border: 1px dotted pink;*/
 /*        width: 50%;*/
-        padding-left: 25.5vmin;
-        position: relative;
+/*        padding-left: 20vmin;*/
+        left: 13vmin;
+        text-align: center;
+        
     }
     
     #h3_third,
@@ -243,15 +266,7 @@
             color: rgba(2, 233, 2, 0.59);
         }
     }
-    
-    body {
-        overflow-x: scroll;
-        overflow-y: scroll;
-        background-image: url("https://lorempixel.com/g/1920/1920/nature/2");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-    }
+
     
     .blue {
         color: dodgerblue;
@@ -286,8 +301,7 @@
         color: rgba(49, 66, 127, 1.0);
     }
     
-    .titleMiddleBlue,
-    .h3Color {
+    .titleMiddleBlue  {
         color: rgba(98, 132, 255, 1.0);
     }
     
