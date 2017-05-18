@@ -21,12 +21,12 @@
     .containerBottom {
         position: relative;
         height: auto;
-        /*        border: 2px solid yellow;*/
+                /*border: 2px solid yellow;*/
     }
     
     .container {
         top: 5vmin;
-        left 3vmin;
+        left: 3vmin;
     }
     
     .containerRight {
