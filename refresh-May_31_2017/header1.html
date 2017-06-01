@@ -1,0 +1,319 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<head>
+    <!-- Housekeeping -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Carme|Indie+Flower|Montserrat:300,400,500,600,700,900|Reenie+Beanie|Roboto:100,100i,300,300i,400,400i,500,500i,700,900i|Shadows+Into+Light|Syncopate:400,700" rel="stylesheet">
+
+    <!-- CSS Stylesheet href's -->
+    <link rel="stylesheet" href="css/main.css">
+    <link media="all and (min-width: 250px)" rel="stylesheet" href="css/handheld.css">
+    <link media="all and (min-width: 768px)" rel="stylesheet" href="css/desktop.css">
+
+
+    <title>Refresh Estate Sales</title>
+    <style>
+        #title {
+            /*            display: none;*/
+            line-height: 0px;
+        }
+        
+        .hdr {
+            /*
+            
+            position: fixed;
+            top: 0;
+            width: 100%;
+            min-height: 9vmin;
+            background-color: rgba(0, 0, 0, 1.0);
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            justify-content: flex-end;
+*/
+        }
+        
+        nav.hdr li {
+            font-size: 2.75vmin;
+            line-height: 2.75vmin;
+        }
+        
+        .paisleyBorderTop {
+            position: fixed;
+            top: 11.5vmin;
+            min-height: 5vmin;
+            min-width: 100%;
+            left: -0.0vmin;
+            perspective: 150px;
+            z-index: -5;
+        }
+        
+        a {
+            top: 3vmin;
+        }
+        
+        header nav ul {
+            background: #1e2b33;
+            background-color: rgba(35, 60, 39, 1.0);
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 10.75vmin;
+            width: 33%;
+            background: rgba(147, 255, 166, 1.0);
+            /* For browsers that do not support gradients */
+            background: -ms-linear-gradient(left, rgba(147, 255, 166, 1.0), rgba(81, 219, 76, 1.0));
+            /* For Microsoft */
+            background: -webkit-linear-gradient(left, rgba(147, 255, 166, 1.0), rgba(81, 219, 76, 1.0));
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(right, rgba(147, 255, 166, 1.0), rgba(81, 219, 76, 1.0));
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(right, rgba(147, 255, 166, 1.0), rgba(81, 219, 76, 1.0));
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to right, rgba(147, 255, 166, 1.0), rgba(81, 219, 76, 0.01));
+            /* Standard syntax */
+            z-index: +155;
+        }
+        
+        nav li a {
+            font-family: 'Architects Daughter', cursive !important;
+            text-shadow: 1px 1.25px rgba(112, 127, 116, 1.0);
+            display: block;
+            line-height: 5.5vmin;
+            min-height: 4.25vmin;
+            font-size: 2.5vw;
+            /*            float: left;*/
+            left: 0;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 14px 12px;
+            text-decoration: none;
+            border: 1px solid rgba(244, 210, 161, 1.0);
+            border-radius: 15px;
+            /*            list-style-type: none;*/
+            z-index: +0;
+        }
+        
+        nav li a:hover {
+            background-color: rgba(211, 211, 211, 1.0);
+            font-size: 2.75vw;
+            color: rgba(2, 211, 3, 1.0);
+            !important;
+            -moz-transition: all .55s ease-in-out;
+            -o-transition: all .55s ease-in-out;
+            -ms-transition: all .55s ease-in-out;
+            -webkit-transition: all .55s ease-in-out;
+            transition: all 0.55s ease-in-out;
+        }
+        /*     drop down menu  start***************************/
+        
+        header {
+            font-family: 'Architects Daughter', cursive !important;
+            /*            background: #1e2b33;*/
+            /* menu bg color */
+            position: fixed;
+            z-index: +1;
+        }
+        
+        .logo {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            border-radius: 50%;
+            z-index: +15;
+            /*            left: 65vmin;*/
+            /*            transform: translate(-50%);*/
+        }
+        /*
+        #menuHamburgerButton div img {
+            width: 7vw;
+            height: 7vh;
+            min-width: 13px;
+            min-height: 13px;
+        }
+*/
+        
+        img.logo {
+            position: fixed;
+            top: -7.0vmin;
+            width: 24vmin;
+            height: 24vmin;
+            transform: translate(calc(50vw - 7vw), 0%);
+            z-index: -0;
+        }
+        
+        header {
+            border: 0px solid rgba(0, 0, 0, 0.0) !important;
+            border: 0px solid rgba(255, 0, 0, 1.0)!important;
+        }
+        
+        #menuHamburgerButton {
+            background-image: none;
+            background-color: rgba(0, 0, 0, 0.0) !important;
+            border: 0px solid rgba(0, 0, 0, 0.0) !important;
+            border-radius: 0px !important;
+            z-index: -1;
+        }
+        
+        button {}
+        
+        button img {
+            width: 5.5vw;
+            height: 7.5vh;
+            padding: 0.93vmin !important;
+            min-width: 12px !important;
+            min-height: 12px!important;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            width: 2vw;
+            border: 0px solid rgba(0, 0, 0, 1.0) !important;
+            border-radius: 0px !important;
+        }
+        
+        #menuHamburgerButton img {
+            position: fixed;
+            top: 2.0vh !important;
+            left: 3vw !important;
+        }
+        
+        #menuHamburgerButton img:hover {
+            top: 1.7vh !important;
+            left: 2.7vw !important;
+            background-color: rgba(121, 201, 1, 0.5);
+            /*            width: 7.1vw;*/
+            width: 6.1vw;
+            height: 8.1vh;
+            min-width: 18px !important;
+            min-height: 18px!important;
+            border: 1.75px dotted rgba(0, 211, 0, 1);
+            -moz-transition: all .35s ease-in-out;
+            -o-transition: all .35s ease-in-out;
+            -ms-transition: all .35s ease-in-out;
+            -webkit-transition: all .35s ease-in-out;
+            transition: all 0.35s ease-in-out;
+        }
+        /*
+        a,
+        a:hover,
+        button:hover,
+        button {
+            border: 1px solid rgba(0, 0, 0,0.0) !important;
+        }        
+*/
+        
+        .fadein,
+        .fadeout {
+            opacity: 0;
+            -moz-transition: opacity 0.4s ease-in-out;
+            -o-transition: opacity 0.4s ease-in-out;
+            -webkit-transition: opacity 0.4s ease-in-out;
+            transition: opacity 0.4s ease-in-out;
+            z-index: -2;
+        }
+        
+        .fadein {
+            opacity: 1;
+            z-index: +1;
+        }
+        
+        #menuText {
+            position: fixed;
+            top: 4.5vmin;
+            left: 11.0vw;
+            font-family: 'Architects Daughter', cursive !important;
+            text-shadow: 0.75px 0.75px rgba(112, 127, 116, 1.0);
+            display: block;
+            line-height: 3.0vmin;
+            min-height: 3.0vmin;
+            font-size: 3vmin !important;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        #menuFade {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <header>
+            <!--            <span id="title"></span>-->
+            <!--                    <span id="title">Refresh Estate Sales</span>-->
+            <!--            <span id="menuText">Menu</span>-->
+            <a href="#">
+                <button id="menuHamburgerButton">
+                    <!--                    <img src="media/menu-hamburger-24x24.png">-->
+                    <img src="media/menu-hamburger-white-55x55.png">
+                </button>
+            </a>
+            <!--        <div id="menuFade" class="fadeout">            -->
+            <nav id="menuFade" class="fadeout">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="http://buy.refreshestatesales.biz/public_html/buy/index.php/contact/">Contact</a></li>
+
+                </ul>
+
+
+            </nav>
+            <div>
+                <img class="paisleyBorderTop" src="media/borders-holly2.png">
+                <a href="index.html"> <img class="logo" src="media/refresh-expanded.png"></a>
+            </div>
+        </header>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        $("#menuHamburgerButton").click(function () {
+            if ($("#menuFade").hasClass("fadeout"))
+                $("#menuFade").removeClass("fadeout").addClass("fadein").css({
+                    "display": "block",
+                    "transition": "all 0.3s ease-in"
+                });
+            else
+                $("#menuFade").removeClass("fadein").addClass("fadeout").css({
+                    "display": "none",
+                    "transition": "all 0.6s ease-in"
+                });
+        });
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-94037734-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
