@@ -126,6 +126,9 @@
                         $("#counter").text(counter);
                         var newKeepTrying = keepTrying.bind(this);
                         setTimeout(newKeepTrying, 0);
+                    } else {
+                        counter++;
+                        $("#counter").text(counter);
                     }
                 }
                 
